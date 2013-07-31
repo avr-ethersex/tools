@@ -11,14 +11,12 @@ while True :
  ecmdString = []
  read_results=[]
 
-
  with I2CMaster() as i2c:
   while True:
+ 
    ecmd = "version"
    for ecmdChar in ecmd:
     ecmdString.append(ord(ecmdChar))
-
-  # ecmdString.append(ord('\0'))
    i2c.transaction(writing(address,ecmdString))
    print (ecmd)
    print (ecmdString)
@@ -31,8 +29,6 @@ while True :
    ecmd = "fuse"
    for ecmdChar in ecmd:
     ecmdString.append(ord(ecmdChar))
-
- #  ecmdString.append(ord('\0'))
    i2c.transaction(writing(address,ecmdString))
    print (ecmd)
    print (ecmdString)
@@ -45,8 +41,6 @@ while True :
    ecmd = "1w convert 281efeeb020000c0"
    for ecmdChar in ecmd:
     ecmdString.append(ord(ecmdChar))
-
-#   ecmdString.append(ord('\0'))
    i2c.transaction(writing(address,ecmdString))
    print (ecmd)
    print (ecmdString)
@@ -56,12 +50,9 @@ while True :
    ecmdString = []
    print ("---------")
 
-   ecmd = "a"
    ecmd = "1w get 281efeeb020000c0"
    for ecmdChar in ecmd:
     ecmdString.append(ord(ecmdChar))
-
-   #ecmdString.append(ord('\0'))
    i2c.transaction(writing(address,ecmdString))
    print (ecmd)
    print (ecmdString)
@@ -75,8 +66,6 @@ while True :
    ecmd = "hostname"
    for ecmdChar in ecmd:
     ecmdString.append(ord(ecmdChar))
-
-#   ecmdString.append(ord('\0'))
    i2c.transaction(writing(address,ecmdString))
    print (ecmd)
    print (ecmdString)
