@@ -1,5 +1,5 @@
 import mysql.connector
-import sys
+
 config = {
     'host': '1.1.1.1',
     'user': 'user',
