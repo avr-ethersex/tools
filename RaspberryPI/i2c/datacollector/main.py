@@ -14,4 +14,4 @@ print(hostname,version)
 
 while True :
         sensor_id,temperature=ecmd.get_temperature()
-        MySQL.insert_temperature(sensor_id,temperature)
+        database.insert_temperature(sensor_id,temperature)
