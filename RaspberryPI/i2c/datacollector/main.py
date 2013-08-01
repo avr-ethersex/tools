@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import MySQL
+import database as db
 import ethersex as ecmd
 from time import sleep
 
@@ -11,7 +11,6 @@ print("Data collector i2c\n")
 print("------------------\n")
 print(hostname,version)
 
-
 while True :
         sensor_id,temperature=ecmd.get_temperature()
-        database.insert_temperature(sensor_id,temperature)
+        db.insert_temperature(sensor_id,temperature)
